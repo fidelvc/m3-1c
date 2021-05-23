@@ -1,0 +1,147 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: sans-serif;
+}
+:root {
+    --bleed-content: 0.5em 0.75rem;
+    --bleed-container: 1.5rem;
+    --border-radius: 0.5rem;
+    --height: 1.5rem;
+    --gap: 1.5rem;
+}
+h2, h3, p{
+    padding: var(--bleed-content);
+}
+
+@media (prefers-color-scheme: light) {
+ .container {
+     --bg-color: whitesmoke;
+ }
+ .header, .main, .footer{
+     --bg-color: lightgray;
+ }
+ .headerbar, .social{
+     --bg-color: transparent;
+ }
+ .navbar a{
+     --bg-color: transparent;
+ }
+ .navbar a:hover{
+     --bg-color: royalblue;
+     --color: whitesmoke;
+ }
+ .slogan{
+     --bg-color: rgba(0,0,0,0.1);
+ }
+    
+}
+
+/* Modo Tablet PC */
+@media screen {
+    .container{
+        background-color: var(--bg-color);
+        margin: 0 auto;
+        max-width: 85vw;
+        min-height: 100vh;
+        display: grid;
+        grid-template-rows: auto 4fr 1fr;
+        gap: var(--gap);
+        padding: var(--bleed-container);
+    }
+
+    .header{
+        background-color: var(--bg-color, black);
+        background-image: url(../images/cabecera.jpg);
+        background-size: cover; 
+        background-position: center center;
+        display: grid;
+        gap: var(--gap);
+        padding: var(--bleed-container);
+    }
+    .headerbar{
+        background-color: var(--bg-color, darkblue);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: var(--bleed-container);
+    }
+    .logo{
+        background-color: var(--bg-color, red);
+        height: 3rem;
+    }
+    .navbar{
+        background-color: var(--bg-color, blue);
+        display: flex;
+        gap: 1.5rem;
+        justify-content: space-evenly;
+    }
+    .navbar a{
+        background-color: var(--bg-color, crimson);
+        filter: grayscale(1);
+        text-decoration: none;
+        display: flex;
+        gap: 0.5rem;
+        min-height: var(--height);
+        align-items: center;
+        padding: var(--bleed-content);
+    }
+    .navbar a:hover{
+        background-color: var(--bg-color);
+        color: var(--color);
+        filter: grayscale(0);
+        text-decoration: none;
+    }
+    .navbar img, .social img{
+        height: 1.2rem;
+    }
+    .social {
+        background-color: var(--bg-color, red);
+        display: grid;
+        gap: var(--gap);
+        padding: var(--bleed-content);
+    }
+    .social a{
+        filter: grayscale(1);
+    }
+    .social a:hover{
+        filter: grayscale(0);
+    }
+    .slogan{
+        
+        padding: var(--bleed-container);
+        background-color: var(--bg-color, red);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.5rem;
+        font-family: serif;
+        color: rgba(178, 34, 34, 0.589);
+    }
+   
+    
+    
+    .article img {
+        object-fit: cover;
+        height: 10rem;
+        
+    }
+    
+
+}
+
+/* Vista tablet */
+@media(max-width:80rem) {
+
+}
+
+/* Vista móvil */
+
+@media (max-width: 40rem) {
+ 
+    
+}
