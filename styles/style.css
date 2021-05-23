@@ -13,6 +13,8 @@ body {
     --border-radius: 0.5rem;
     --height: 1.5rem;
     --gap: 1.5rem;
+    --box-shadow: inset 0 -3em 3em rgba(0,0,0,0.1),
+    0.3em 0.3em 1em rgba(0,0,0,0.3);
 }
 h2, h3, p{
     padding: var(--bleed-content);
@@ -23,8 +25,11 @@ h2, h3, p{
         background-color: crimson;
         color: whitesmoke;
     }
+    body{
+        background-color: crimson;
+    }
  .container {
-     --bg-color: whitesmoke;
+     --bg-color: transparent;
  }
  .header, .main, .footer{
      --bg-color: lightgray;
@@ -36,7 +41,7 @@ h2, h3, p{
      --bg-color: transparent;
  }
  .navbar a:hover{
-     --bg-color: royalblue;
+     --bg-color: crimson;
      --color: whitesmoke;
  }
  .slogan{
@@ -50,12 +55,12 @@ h2, h3, p{
     .container{
         background-color: var(--bg-color);
         margin: 0 auto;
-        max-width: 85vw;
+        max-width: 85rem;
         min-height: 100vh;
         display: grid;
-        grid-template-rows: auto 4fr 1fr;
+        grid-template-rows: auto auto auto;
         gap: var(--gap);
-        padding: var(--bleed-container);
+        
     }
 
     .header{
@@ -127,25 +132,25 @@ h2, h3, p{
     }    
     
     .main{
-        background-color: var(--bg-color);
+        background-color: var(--bg-color, crimson);
         display: flex;
         gap: var(--gap);
         padding: var(--bleed-container);
     }
     .aside{
         flex-grow: 1;
-        padding: var(--bleed-container);
+        
         background-color: whitesmoke;
         min-width: max-content;
     }
 
     .article-wrapper{
         flex-grow: 2;
-        background-color: wheat;
+        
         display: flex;
         flex-wrap: wrap;
         gap: var(--gap);
-        padding: var(--bleed-container);
+        
 
     }
     
@@ -185,7 +190,6 @@ h2, h3, p{
 
 @media (max-width: 40rem) {
     .container{
-        min-width: 18rem;
         max-width: 24rem;
     }
 
@@ -210,8 +214,11 @@ h2, h3, p{
     .slogan{
         text-align: center;
     }
-    p{
-        display: none;
+    .article-wrapper{
+        display: grid;
     }
-    
+    .article, .aside, .main, .header, .footer, .slogan{
+        box-shadow: var(--box-shadow);
+        border-radius: var(--border-radius);
+    }
 }
