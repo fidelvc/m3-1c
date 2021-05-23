@@ -19,6 +19,10 @@ h2, h3, p{
 }
 
 @media (prefers-color-scheme: light) {
+    h2, h3 {
+        background-color: crimson;
+        color: whitesmoke;
+    }
  .container {
      --bg-color: whitesmoke;
  }
@@ -121,18 +125,60 @@ h2, h3, p{
         font-family: serif;
         color: rgba(178, 34, 34, 0.589);
     }    
-    .article img {
-        object-fit: cover;
-        height: 10rem;
-        
+    
+    .main{
+        background-color: var(--bg-color);
+        display: flex;
+        gap: var(--gap);
+        padding: var(--bleed-container);
+    }
+    .aside{
+        flex-grow: 1;
+        padding: var(--bleed-container);
+        background-color: whitesmoke;
+        min-width: max-content;
+    }
+
+    .article-wrapper{
+        flex-grow: 2;
+        background-color: wheat;
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--gap);
+        padding: var(--bleed-container);
+
     }
     
+    .article{
+        flex: 1;
+        flex-basis: 40%;
+        background-color: whitesmoke;
+        overflow: hidden;
+    }
+
+    .article:last-child{
+        flex-basis: 100%;
+    }
+    .article figure {
+        height: 10rem;
+        max-height: 15rem;
+        overflow: hidden;        
+    }
+    .article figure img {
+        height: auto;
+        width: 100%;
+    }
+    .footer{
+        background-color: var(--bg-color);
+    }
 
 }
 
 /* Vista tablet */
 @media(max-width:80rem) {
-
+ .main{
+     display: grid;
+ }
 }
 
 /* Vista móvil */
